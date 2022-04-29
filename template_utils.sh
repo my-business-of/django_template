@@ -1,9 +1,12 @@
 #!/bin/bash
 echo "==================="
 echo "This is the template utils select a option to continue"
-echo "1) Replace all template names"
-echo "2) Replace file name"
-echo "3) Exit"
+echo "====><===="
+echo "1) Replace base folder"
+echo "====><===="
+echo "2) Replace all template names (deprecated)"
+echo "3) Replace file name (deprecated)"
+echo "4) Exit"
 echo "==================="
 
 # shellcheck disable=SC2162
@@ -31,8 +34,13 @@ function replace_folders_name {
 
 if [[ $option_input == 1 ]]
 then
-    replace_folders_name
+  project_name=$(cat .env | grep PROJECT_NAME | awk -F '=' '{print $2}')
+  # django_template is the name of main config folder
+  eval "mv django_template ${project_name}"
 elif [[ $option_input == 2 ]]
+then
+  replace_folders_name
+elif [[ $option_input == 3 ]]
 then
   echo "-> Enter the file path that will be replaced"
   # shellcheck disable=SC2162
