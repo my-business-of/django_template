@@ -1,8 +1,25 @@
 # django-template
-
+- Python version -> `3.10.1`
 - Default installed libs and utilities:
 
 | Lib Name      | Used for manage  | Used for                                | 
 |---------------|------------------|-----------------------------------------|
-| Pipenv        | package versions | https://pypi.org/project/pipenv/        |
+| pipenv        | package versions | https://pypi.org/project/pipenv/        |
 | python-dotenv | env variables    | https://pypi.org/project/python-dotenv/ |
+| django        | -                | -                                       |
+
+- Install required libs
+
+```zsh
+python -m venv venv # Create virtual env
+source venv/bin/activate # Activate virtual env
+pip install pipenv # Install package manager
+pipenv install # Install all dependencies
+```
+
+- Replace template name
+
+```zsh
+chmod +x template_utils.sh # Make file executable
+./template_utils.sh # Run template util
+```
