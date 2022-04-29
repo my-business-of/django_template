@@ -38,7 +38,11 @@ then
   # django_template is the name of main config folder
   default_project_name="django_template"
   eval "mv ${default_project_name} ${project_name}"
-  eval "sed -i '' -e 's/${default_project_name}/${project_name}/g' .coveragerc"
+
+  for folder_name in ".coveragerc" "pytest.ini"
+  do
+   replace_file_name "${folder_name}" "${default_project_name}" "${project_name}"
+  done
 elif [[ $option_input == 2 ]]
 then
   replace_folders_name

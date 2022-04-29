@@ -7,9 +7,9 @@ name = "pypi"
 django = "*"
 python-dotenv = "*"
 faker = "*"
-factory-boy = "*"
 pytest-django = "*"
 coverage = "*"
+pytest-factoryboy = "*"
 
 [dev-packages]
 
