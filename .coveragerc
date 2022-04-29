@@ -1,0 +1,10 @@
+[run]
+# https://coverage.readthedocs.io/en/6.3.2/source.html#execution
+omit =
+    */venv/*
+    */tests/*
+    */root/*
+    */django_template/asgi.py*
+    */django_template/settings.py*
+    */django_template/urls.py*
+    */django_template/wsgi.py*

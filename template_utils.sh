@@ -36,7 +36,9 @@ if [[ $option_input == 1 ]]
 then
   project_name=$(cat .env | grep PROJECT_NAME | awk -F '=' '{print $2}')
   # django_template is the name of main config folder
-  eval "mv django_template ${project_name}"
+  default_project_name="django_template"
+  eval "mv ${default_project_name} ${project_name}"
+  eval "sed -i '' -e 's/${default_project_name}/${project_name}/g' .coveragerc"
 elif [[ $option_input == 2 ]]
 then
   replace_folders_name
