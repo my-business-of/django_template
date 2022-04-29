@@ -18,7 +18,6 @@ function replace_file_name() {
 }
 
 function replace_folders_name {
-  #  echo "==> ${option_input} was selected"
   echo "=> Write the name of your project"
   # shellcheck disable=SC2162
   read new_project_name
