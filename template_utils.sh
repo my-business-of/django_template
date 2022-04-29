@@ -14,7 +14,7 @@ function replace_file_name() {
   file_path="${1}"
   name_to_replace="${2}"
   replaced_name="${3}"
-  eval "sed -i 's/${name_to_replace}/${replaced_name}/g' ${file_path}"
+  eval "sed -i '' -e 's/${name_to_replace}/${replaced_name}/g' ${file_path}"
 }
 
 function replace_folders_name {
