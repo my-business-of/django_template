@@ -25,5 +25,12 @@ def get_params():
             params[param["name"]] = value
 
 
+def create_env_file():
+    with open('.env', 'w') as f:
+        for key, value in params.items():
+            f.write(f'{key.upper()}={value}' + '\n')
+
+
 if __name__ == "__main__":
     get_params()
+    create_env_file()
